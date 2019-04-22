@@ -3,7 +3,11 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class CategoryTest {
-//we need to be able to retrieve all Tasks saved into a specific Category. We'll begin by writing a spec:
+
+
+    @Rule
+    public DatabaseRule database = new DatabaseRule();
+    //we need to be able to retrieve all Tasks saved into a specific Category. We'll begin by writing a spec:
     @Test
     public void getTasks_retrievesALlTasksFromDatabase_tasksList() {
         Category myCategory = new Category("Household chores");
